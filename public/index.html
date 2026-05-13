@@ -35,17 +35,16 @@
   
      window.socket = socket
   
-     socket.on("saludo", (payload) => {
-        console.log("Mensaje del servidor", payload);
-      })
-  
-     socket.on("chat", (message) => {
-        console.log("Mensaje del servidor", message);
-      })
+     socket.on("saludo", (payload) =>  console.log("Mensaje del servidor", payload))
+     socket.on("chat", (message) => console.log("Mensaje del servidor", message))
+     socket.on('disconect', () => console.log('Perdimos comunicación con el servidor'))
 
-      socket.on('disconect', () => {
-        console.log('Perdimos comunicación con el servidor');
-      })
+     socket.on("BANDS_LIST", (bands) => {
+        console.clear();
+        console.table(bands);
+     }) 
+
+
     
      </script>
     
